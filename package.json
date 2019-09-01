@@ -1,5 +1,5 @@
 {
-  "name": "fgcweb3",
+  "name": "@fantasygold/fgcweb3",
   "namespace": "fantasygold",
   "version": "1.1.0",
   "description": "FantasyGold JavaScript API comunicating to fantasygold node over RPC",
@@ -63,7 +63,7 @@
       "name": "FantasyGold Core",
       "email": "admin@fantasygold.io",
       "url": "https://www.fantasygold.io/"
-    
+
     }
   ]
 }
