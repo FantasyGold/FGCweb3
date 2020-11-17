@@ -1,0 +1,35 @@
+language: node_js
+
+node_js:
+  - "10"
+
+env:
+  - CXX=g++-4.8 FGC_RPC_ADDRESS='http://username:password@localhost:57810' SENDER_ADDRESS='FNPdNaCxWiFtMzYb9Z37buVMGHgUANhZoj' WALLET_PASSPHRASE='password'
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
+
+cache:
+  directories:
+    - "node_modules"
+
+before_install:
+  - wget https://github.com/fantasygold/fantasygold-core/releases/download/mainnet-ignition-v2.19.1/fantasygold-2.19.1-x86_64-linux-gnu.tar.gz
+
+install:
+  - tar -xvzf fantasygold-2.19.1-x86_64-linux-gnu.tar.gz
+  - npm install
+  - mkdir test/data/.fantasygold
+
+script:
+  - ./fantasygold-2.19.1/bin/fantasygoldd -testnet -logevents -rpcuser=user -rpcpassword=password -datadir=./test/data/.fantasygold & 
+  - sleep 10
+  - npm run test:cleanenv
+
+after_failure:
+  - cat /home/travis/build/FantasyGold/FGCWeb3/test/data/.fantasygold/testnet3/debug.log

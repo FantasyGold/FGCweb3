@@ -1,12 +1,12 @@
 {
   "name": "@fantasygold/fgcweb3",
   "namespace": "fantasygold",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "FantasyGold JavaScript API comunicating to fantasygold node over RPC",
   "main": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fantasygold/fgcweb3.js.git"
+    "url": "https://github.com/fantasygold/fgcweb3.git"
   },
   "license": "LGPL-3.0",
   "directories": {
@@ -49,7 +49,7 @@
   },
   "homepage": "https://www.fantasygold.io/",
   "bugs": {
-    "url": "https://github.com/fantasygold/fgcweb3.js/issues"
+    "url": "https://github.com/fantasygold/fgcweb3/issues"
   },
   "keywords": [
     "fantasygold",
